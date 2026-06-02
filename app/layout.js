@@ -1,12 +1,12 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Missed Call AI — Never Lose Another Customer',
-  description: 'We text your missed calls back in 60 seconds. They book. You get paid. $400/mo for HVAC, plumbing, roofing, and electrical businesses.',
-  keywords: 'missed call AI, SMS follow up, HVAC leads, plumber leads, contractor automation',
+  title: 'Missed Call AI — Stop Losing Jobs to Voicemail',
+  description: 'Missed Call AI texts your customers back in 60 seconds — books the job, answers questions, keeps the lead warm. Built for HVAC, plumbing, roofing, and electrical businesses. $400/mo.',
+  keywords: 'missed call AI, SMS follow up, HVAC leads, plumber leads, contractor automation, roofing leads, electrician leads',
   openGraph: {
-    title: 'Missed Call AI — Never Lose Another Customer',
-    description: 'We text your missed calls back in 60 seconds. They book. You get paid.',
+    title: 'Missed Call AI — Stop Losing Jobs to Voicemail',
+    description: 'Texts back in 60 seconds. Books the job. Keeps the lead warm. While you\'re on another call.',
     type: 'website',
   }
 }

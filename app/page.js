@@ -2,6 +2,17 @@ import styles from './page.module.css'
 
 const STRIPE_LINK = 'https://buy.stripe.com/4gMdR144J6KYcmi7XWg7e05'
 
+function LogoSVG({ size = 32 }) {
+  return (
+    <svg width={size * 3.5} height={size} viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Missed Call AI">
+      <rect width="36" height="36" rx="8" y="2" fill="#ff5a1f"/>
+      <text x="18" y="25" textAnchor="middle" fill="white" fontSize="18" fontWeight="800" fontFamily="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">M</text>
+      <text x="46" y="27" fill="#f0f2f5" fontSize="15" fontWeight="700" fontFamily="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">Missed Call</text>
+      <text x="46" y="38" fill="#ff5a1f" fontSize="10" fontWeight="800" letterSpacing="2" fontFamily="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">AI</text>
+    </svg>
+  )
+}
+
 export default function Home() {
   return (
     <main>
@@ -9,8 +20,7 @@ export default function Home() {
       <nav className={styles.nav}>
         <div className="container" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
           <div className={styles.logo}>
-            <span className={styles.logoIcon}>📲</span>
-            <span>Missed Call AI</span>
+            <LogoSVG size={32} />
           </div>
           <a href={STRIPE_LINK} className={styles.navCta} target="_blank" rel="noopener noreferrer">
             Start Free Trial
@@ -21,14 +31,17 @@ export default function Home() {
       {/* HERO */}
       <section className={styles.hero}>
         <div className="container">
-          <div className={styles.badge}>🔥 $300–$2,000 per missed call — stop leaving money on the table</div>
+          <div className={styles.socialProofBanner}>
+            <span className={styles.socialProofDot} />
+            HVAC and plumbing businesses lose 35% of after-hours calls to competitors. Not anymore.
+          </div>
           <h1 className={styles.heroH1}>
-            Never Lose Another Customer<br/>
-            <span className={styles.heroAccent}>to a Missed Call</span>
+            Stop Losing Jobs<br/>
+            <span className={styles.heroAccent}>to Voicemail.</span>
           </h1>
           <p className={styles.heroSubhead}>
-            We text your missed calls back in <strong>60 seconds</strong>. They book. You get paid.
-            <br/>No extra work. No lost jobs. Just revenue you were already missing.
+            Missed Call AI texts back your customers in <strong>60 seconds</strong> — books the job, answers questions, keeps the lead warm.
+            <br/>While you&apos;re on another call.
           </p>
           <div className={styles.heroCtas}>
             <a href={STRIPE_LINK} className={styles.ctaPrimary} target="_blank" rel="noopener noreferrer">
@@ -46,7 +59,7 @@ export default function Home() {
             <div className={styles.statDivider} />
             <div className={styles.stat}>
               <span className={styles.statNum}>85%</span>
-              <span className={styles.statLabel}>won't call back again</span>
+              <span className={styles.statLabel}>won&apos;t call back again</span>
             </div>
             <div className={styles.statDivider} />
             <div className={styles.stat}>
@@ -57,23 +70,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRUST STRIP */}
+      <section className={styles.trustStrip}>
+        <div className="container">
+          <p className={styles.trustLabel}>BUILT FOR TRADES WHO ARE TIRED OF TECH PROMISES</p>
+          <div className={styles.trustItems}>
+            <div className={styles.trustItem}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z" fill="#ff5a1f"/></svg>
+              <span>No tech skills required</span>
+            </div>
+            <div className={styles.trustItem}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z" fill="#ff5a1f"/></svg>
+              <span>Setup in 20 minutes</span>
+            </div>
+            <div className={styles.trustItem}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z" fill="#ff5a1f"/></svg>
+              <span>Works with your existing number</span>
+            </div>
+            <div className={styles.trustItem}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z" fill="#ff5a1f"/></svg>
+              <span>No contracts — cancel anytime</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DEMO MOCKUP */}
       <section className={styles.demoSection}>
         <div className="container">
           <div className={styles.demoGrid}>
             <div className={styles.demoLeft}>
-              <h2>What Your Customer Sees</h2>
-              <p className={styles.demoSubtext}>Within 60 seconds of a missed call, they get a real SMS — not a robot, not a voicemail. A personal message that starts a conversation.</p>
+              <div className={styles.sectionLabel}>WHAT YOUR CUSTOMER SEES</div>
+              <h2>A Real Conversation.<br/>In Under 60 Seconds.</h2>
+              <p className={styles.demoSubtext}>The moment you miss a call, your customer gets a personal SMS — not a robot, not a voicemail prompt. A real message that starts a conversation and closes the job.</p>
               <ul className={styles.demoPoints}>
-                <li>✅ Texts from your own phone number</li>
-                <li>✅ Personalized to their name</li>
-                <li>✅ Booking link included automatically</li>
-                <li>✅ 3-message follow-up sequence</li>
-                <li>✅ Books appointments 24/7</li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#ff5a1f"/><path d="M5 9L7.5 11.5L13 6.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Texts from your own phone number
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#ff5a1f"/><path d="M5 9L7.5 11.5L13 6.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Personalized to their name
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#ff5a1f"/><path d="M5 9L7.5 11.5L13 6.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Booking link included automatically
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#ff5a1f"/><path d="M5 9L7.5 11.5L13 6.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  3-message follow-up sequence
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#ff5a1f"/><path d="M5 9L7.5 11.5L13 6.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Books appointments 24/7
+                </li>
               </ul>
             </div>
             <div className={styles.demoRight}>
               <div className={styles.phoneMockup}>
+                <div className={styles.phoneNotch} />
                 <div className={styles.phoneScreen}>
                   <div className={styles.phoneHeader}>
                     <div className={styles.phoneAvatar}>AC</div>
@@ -106,11 +161,15 @@ export default function Home() {
                       <div className={styles.msgTime}>2:16 PM ✓✓</div>
                     </div>
                     <div className={styles.msgIncoming}>
-                      <div className={styles.msgBubbleIn}>✅ Appointment Booked: Today 4pm</div>
+                      <div className={styles.msgBubbleIn}>Appointment Booked: Today 4pm ✅</div>
                       <div className={styles.msgTime}>2:17 PM</div>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className={styles.demoCaption}>
+                <span className={styles.demoCaptionDot} />
+                Avg response time: 47 seconds
               </div>
             </div>
           </div>
@@ -127,14 +186,14 @@ export default function Home() {
               <div className={styles.stepNum}>01</div>
               <div className={styles.stepIcon}>📞</div>
               <h3>You Miss a Call</h3>
-              <p>Customer calls. You're on a job, driving, or just busy. It happens — that's why you hired us.</p>
+              <p>Customer calls. You&apos;re on a job, driving, or just busy. It happens — that&apos;s why you hired us.</p>
             </div>
             <div className={styles.stepArrow}>→</div>
             <div className={styles.step}>
               <div className={styles.stepNum}>02</div>
               <div className={styles.stepIcon}>💬</div>
               <h3>AI Texts Back Instantly</h3>
-              <p>Within 60 seconds, we send a friendly SMS from your number. "Hi [Name], sorry I missed you — how can I help?"</p>
+              <p>Within 60 seconds, we send a friendly SMS from your number. &quot;Hi [Name], sorry I missed you — how can I help?&quot;</p>
             </div>
             <div className={styles.stepArrow}>→</div>
             <div className={styles.step}>
@@ -192,22 +251,46 @@ export default function Home() {
             </div>
             <div className={styles.pricingName}>Missed Call AI — Full Service</div>
             <ul className={styles.pricingFeatures}>
-              <li>✅ Unlimited missed call follow-ups</li>
-              <li>✅ AI-powered SMS conversations</li>
-              <li>✅ Automatic appointment booking</li>
-              <li>✅ 3-message follow-up sequence</li>
-              <li>✅ Texts from YOUR phone number</li>
-              <li>✅ Works with your existing calendar</li>
-              <li>✅ Monthly performance report</li>
-              <li>✅ Cancel anytime — no contracts</li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Unlimited missed call follow-ups
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                AI-powered SMS conversations
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Automatic appointment booking
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                3-message follow-up sequence
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Texts from YOUR phone number
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Works with your existing calendar
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Monthly performance report
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#ff5a1f"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Cancel anytime — no contracts
+              </li>
             </ul>
             <a href={STRIPE_LINK} className={styles.pricingCta} target="_blank" rel="noopener noreferrer">
               Start Free Trial
             </a>
             <p className={styles.pricingNote}>14-day free trial. No credit card required to start.</p>
             <div className={styles.roiCalc}>
-              <strong>ROI Calculator:</strong> Miss just 1 job/week at $800 avg = $3,200/mo lost.
-              Our system pays for itself 8× over.
+              <strong>ROI in plain math:</strong> Miss just 1 job/week at $800 avg = $3,200/mo lost.
+              This pays for itself 8× over.
             </div>
           </div>
         </div>
@@ -257,11 +340,11 @@ export default function Home() {
       <section className={styles.finalCta}>
         <div className="container">
           <h2>Stop losing jobs to your voicemail.</h2>
-          <p>Every missed call is a job someone else is booking right now. Let's fix that.</p>
+          <p>Every missed call is a job someone else is booking right now. Let&apos;s fix that.</p>
           <a href={STRIPE_LINK} className={styles.ctaPrimary} target="_blank" rel="noopener noreferrer">
             Start Free Trial — $400/mo
           </a>
-          <p className={styles.finalNote}>14-day free trial • No contracts • Setup in 20 minutes</p>
+          <p className={styles.finalNote}>14-day free trial &bull; No contracts &bull; Setup in 20 minutes</p>
         </div>
       </section>
 
@@ -270,15 +353,18 @@ export default function Home() {
         <div className="container">
           <div className={styles.footerInner}>
             <div className={styles.footerBrand}>
-              <span className={styles.logoIcon}>📲</span>
-              <span>Missed Call AI</span>
+              <div className={styles.footerLogoMark}>M</div>
+              <div>
+                <div className={styles.footerBrandName}>Missed Call AI</div>
+                <div className={styles.footerTagline}>A Micro Titan LLC platform</div>
+              </div>
             </div>
             <div className={styles.footerText}>
-              © 2026 Missed Call AI. Built for contractors who are too busy to lose business.
+              &copy; 2026 Micro Titan LLC. Built for contractors who are too busy to lose business.
             </div>
             <div className={styles.footerLinks}>
               <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer">Start Trial</a>
-              <a href="mailto:hello@micro-titan.com">Contact</a>
+              <a href="mailto:greg@micro-titan.com">greg@micro-titan.com</a>
             </div>
           </div>
         </div>
